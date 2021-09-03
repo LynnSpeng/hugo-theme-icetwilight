@@ -1,0 +1,6 @@
+<div class="my-3 font-sans text-xs font-light">
+  Posted on {{ .Date | time.Format ":date_medium" }}.
+  {{ with .Params.timeToRead }}
+    <strong>{{ . }} min read.</strong>
+  {{ end }}
+</div>

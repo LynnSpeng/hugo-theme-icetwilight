@@ -1,0 +1,15 @@
+<div class="relative mb-10 mx-auto max-w-2xl dark:bg-gray-900 bg-white rounded-md shadow-lg overflow-hidden">
+  {{- partial "components/postcover.html" . -}}
+
+
+  <div class="px-7 py-6">
+    <h2 class="py-2 font-serif text-2xl">{{- .Title -}}</h2>
+    <p class="text-md py-2 font-serif">{{- .Summary -}}</p>
+
+    <!-- <PostMeta class="my-3" :post="post" /> -->
+    {{- partial "components/postmeta.html" . -}}
+    {{- partial "components/posttags.html" . -}}
+
+  </div>
+  <a class="absolute z-0 left-0 top-0 w-full h-full opacity-0 overflow-hidden" href="{{ .Permalink }}"> &nbsp;</a>
+</div>

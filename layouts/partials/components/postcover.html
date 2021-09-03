@@ -1,0 +1,5 @@
+{{ with (index (.Resources.Match .Params.Cover) 0).RelPermalink }}
+  <div class="overflow-hidden">
+    <img class="min-w-full max-w-full" src="{{ . }}" alt="Cover Image" />
+  </div>
+{{ end }}

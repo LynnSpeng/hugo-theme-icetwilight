@@ -1,0 +1,32 @@
+<header class="z-10 flex items-center justify-between px-5 h-12 sm:h-16">
+  <div class="flex items-center justify-center">
+    <a href="/">
+      <span class="text-xs">
+        {{- partial "components/fontawesome.html" (dict "icon" "book") -}}
+        <span class="ml-1 font-sans font-light"> {{ .Site.Title }} </span>
+      </span>
+    </a>
+  </div>
+  <div class="flex items-center justify-center">
+    <button
+      class="btn-dark dark:text-gray-200 text-gray-800 bg-transparent focus:outline-none hover:opacity-80 cursor-pointer"
+    ></button>
+  </div>
+
+  <script>
+    let htmlClx = document.documentElement.classList;
+    let btnDark = document.querySelector(".btn-dark");
+    let sysDark = window.matchMedia("(prefers-color-scheme: dark)");
+    let darkVal = localStorage.getItem("dark");
+
+    let setDark = isDark => {
+      htmlClx[isDark ? "add" : "remove"]("dark");
+      localStorage.setItem("dark", isDark ? "yes" : "no");
+    };
+
+    setDark(darkVal ? darkVal === "yes" : sysDark.matches);
+
+    btnDark.addEventListener("click", () => setDark(!htmlClx.contains("dark")));
+    sysDark.addEventListener("change", event => setDark(event.matches));
+  </script>
+</header>

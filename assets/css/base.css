@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-black dark:text-white font-serif bg-gray-100 dark:bg-gray-800;
+}
+
+.badge {
+  @apply m-1 px-2 py-1 text-xs dark:bg-gray-900 border border-gray-200 dark:border-transparent rounded-3xl shadow-lg hover:opacity-80;
+}
+
+.inline-svg {
+  display: inline-block;
+  font-size: inherit;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  position: relative;
+}
+
+.btn-dark {
+  width: 1.5em;
+  height: 1.5em;
+  background: url("/moon.svg");
+}
+
+.dark .btn-dark {
+  background: url("/sun.svg");
+}

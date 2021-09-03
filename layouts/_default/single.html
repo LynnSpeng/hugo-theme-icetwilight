@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <div class="py-7 text-center">
+    <h1 class="mb-4 mt-6 text-2xl font-semibold leading-relaxed">
+      {{ .Title }}
+    </h1>
+
+    {{ partial "components/postmeta.html" . }}
+
+  </div>
+  <div
+    class="fade mx-auto my-10 pb-7 max-w-2xl leading-7 dark:bg-gray-900 bg-white rounded-md shadow-lg overflow-hidden"
+  >
+    {{ partial "components/postcover.html" . }}
+
+
+    <div class="post-content pb-2 pt-8 px-7">
+      {{ .Content }}
+    </div>
+
+    <div class="px-7">
+      {{- partial "components/posttags.html" . -}}
+    </div>
+  </div>
+{{ end }}

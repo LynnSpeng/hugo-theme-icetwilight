@@ -1,0 +1,10 @@
+{{ with .Params.tags }}
+  <div class="relative z-10 mt-1">
+    <a
+      class="placeholder-current mr-1 p-1 text-xs font-light tracking-wide bg-gray-100 dark:bg-gray-800 bg-opacity-80 rounded"
+      href="/tags/{{ . | urlize }}"
+    >
+      <span>#</span> {{ . }}
+    </a>
+  </div>
+{{ end }}
